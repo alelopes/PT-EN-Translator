@@ -27,7 +27,9 @@ Here we have code for reproducing our results (training and testing) and for usi
 | [reports](https://github.com/alelopes/PT-EN-Translator/) | Contains the pdf of any report or publication created from this project. |
 | [notebooks](https://github.com/alelopes/PT-EN-Translator/) | Examples on how to generate and use our project. |
 
+## Training on your own data
 
+If you are going to train using our model or use our testing corpora, It is important to deduplicate your data with testing set provided by us. Also, we think it is suitable to run MinHash LSH algorithm to discard any sentence with > 0.7 Jaccard Similarity with any testing word. We have code for this in para_gt_dataset and an example in the Notebooks.
 
 ## Results
 
@@ -40,13 +42,17 @@ Table 1: Results in ParaCrawl subset with sacreBLEU score
 ![alt text](https://github.com/alelopes/PT-EN-Translator/blob/master/figs/results_gt.png)
 
 
-Table 1: Results in WMT19' test set with sacreBLEU score
+Table 2: Results in WMT19' test set with sacreBLEU score
 
 ![alt text](https://github.com/alelopes/PT-EN-Translator/blob/master/figs/results.png)
+
+About the quality of the data for training, we understand that there is a lot to improve. But to get a sense of the translator's quality, you're reading a text excerpt translated by him. The translator is able to generate translations in a more complex context with difficult words. All this last paragraph is composed of text automatically translated by our project.
 
 ## Future Work
 
 We are going to participate in the WMT'20 Biomedical challenge. Any findings in the participation will be compiled here and all reports will be shared in this repo as well. We believe that the same strategy could be improved if using a PT-br corpus. For the WMT'20 biomedical challenge it would be interesting to train in a larger corpus than what you did.
+
+If you want to contribute to this work or team up with me for some other task (or other challenge in Translation), let me know!
 
 ## References
 
