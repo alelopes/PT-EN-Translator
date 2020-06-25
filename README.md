@@ -2,21 +2,20 @@
 
 This repository brings an implementation of T5 for translation in PT-EN and EN-PT tasks. We propose some changes in tokenizator and post-processing that improves the result. We have here also a report about our findings as well as the weights of the trained models. The training process for T5 in portuguese works like Figure 1. 
 
-![alt text](https://github.com/alelopes/PT-EN-Translator/blob/master/figs/t5.png)
-
+<img src="https://github.com/alelopes/PT-EN-Translator/blob/master/figs/t5.png" width="500">
 Figure 1: T5 training strategy with adition of red conections.  The purple boxeswere the fine-tuning part performed by this work.  Created using figure from [1]
 
 For this project, we used https://paracrawl.eu/ corpus. We trained using 5M+ data from ParaCrawl. We just did not use more data because it was taking too much time. In theory, it would improve the results.
 
 Another important contribution of this repository is the creation of two small corpus of paracrawl containing the Google Translate En - PT-pt and Google Translate PT-pt - En translations of 128000 sentences. This costed around $300 each to train, so you can save some money if you want to compare your results with Google Translate (GT).
 
-# Instalation and Usage
+## Instalation and Usage
 
 To install it, just run 'pip install -r requirements.txt'
 
 It you want to train it, make sure you have a 8GB GPU or change the batch sizes and train it again. On CPU it should work well for evaluating, but it must be time consuming for training. I did not try it.
 
-# Organization
+## Organization
 
 Here we have code for reproducing our results (training and testing) and for using it. Modules and notebooks are available for testing.
 
@@ -30,7 +29,7 @@ Here we have code for reproducing our results (training and testing) and for usi
 
 
 
-# Results
+## Results
 
 Here we are going to compare the results of our algoritm with GT with the translated subset of ParaCrawl and in WMT19' Biomedical Pt-En and En-Pt tasks, comparing our results with the winning algorithm and MarianMT Implementation from https://huggingface.co/transformers/model_doc/marian.html. 
 
@@ -45,10 +44,10 @@ Table 1: Results in WMT19' test set with sacreBLEU score
 
 ![alt text](https://github.com/alelopes/PT-EN-Translator/blob/master/figs/results.png)
 
-# Future Work
+## Future Work
 
 We are going to participate in the WMT'20 Biomedical challenge. Any findings in the participation will be compiled here and all reports will be shared in this repo as well. We believe that the same strategy could be improved if using a PT-br corpus. For the WMT'20 biomedical challenge it would be interesting to train in a larger corpus than what you did.
 
-# References
+## References
 
 [1] Colin  Raffel,   Noam  Shazeer,   Adam  Roberts,   Katherine  Lee,   SharanNarang, Michael Matena, Yanqi Zhou, Wei Li, and Peter J Liu.  Exploring the limits of transfer learning with a unified text-to-text transformer.arXivpreprint arXiv:1910.10683, 2019
